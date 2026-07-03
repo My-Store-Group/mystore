@@ -209,9 +209,14 @@ const Details = ({ apps, darkMode }) => {
           <div className={`p-8 rounded-[2.5rem] border sticky top-32 transition-all ${darkMode ? 'bg-zinc-900 border-zinc-800' : 'bg-white border-zinc-100 shadow-2xl shadow-zinc-200/50'}`}>
             <h4 className="text-lg font-bold mb-6">Installation</h4>
             <div className="space-y-3">
-              <a href={app.downloadUrl} className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all active:scale-[0.98]">
+              <button
+                onClick={() => {
+                  window.location.href = app.downloadUrl;
+                }}
+                className="w-full bg-indigo-600 text-white py-4 rounded-2xl font-bold flex items-center justify-center gap-3 shadow-lg shadow-indigo-600/20 hover:bg-indigo-700 transition-all active:scale-[0.98]"
+              >
                 <Download className="w-5 h-5" /> Download APK
-              </a>
+              </button>
               <button onClick={handleShare} className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-3 border transition-all ${darkMode ? 'border-zinc-800 hover:bg-zinc-800' : 'border-zinc-200 hover:bg-zinc-50'}`}>
                 <Share2 className="w-5 h-5" /> Share
               </button>
