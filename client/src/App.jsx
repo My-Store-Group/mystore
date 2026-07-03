@@ -17,7 +17,9 @@ const App = () => {
   const [authError, setAuthError] = useState("");
 
   const GITHUB_URL = "https://raw.githubusercontent.com/My-Store-Group/My-Store/main/apps.json";
-  const API_URL = "http://localhost:5000/api";
+
+  // Cloudflare/Vercel ke liye standard environment variable logic
+  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
 
   useEffect(() => {
     fetchApps();

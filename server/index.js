@@ -10,7 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 const JWT_SECRET = process.env.JWT_SECRET || 'mystore_secret_key_123';
 
-app.use(cors());
+// Security: Allow only your frontend to access this API
+app.use(cors({
+    origin: process.env.FRONTEND_URL || "*"
+}));
 app.use(express.json());
 
 // MongoDB Connection
@@ -90,6 +93,25 @@ app.get('/', (req, res) => {
     res.send("My Store API is Running! 🚀");
 });
 
+// --- ANTI-SLEEP PING LOGIC ---
+const keepAlive = (url) => {
+    setInterval(() => {
+        axios.get(url)
+            .then(() => console.log(`Pinged at ${new Date().toISOString()}`))
+            .catch((err) => console.error("Ping error:", err.message));
+    }, 600000); // Har 10 minute me khud ko ping karega
+};
+
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+
+    // Automated Anti-Sleep: Pings itself every 10 mins if running on Render
+    const RENDER_EXTERNAL_URL = process.env.RENDER_EXTERNAL_URL;
+    if (RENDER_EXTERNAL_URL) {
+        setInterval(() => {
+            axios.get(RENDER_EXTERNAL_URL)
+                .then(() => console.log("Self-ping successful"))
+                .catch((err) => console.error("Self-ping failed:", err.message));
+        }, 600000);
+    }
 });
