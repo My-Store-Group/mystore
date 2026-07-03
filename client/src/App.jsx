@@ -243,11 +243,16 @@ const Details = ({ apps, darkMode }) => {
                   <span className="font-black">Play Store</span>
                   <span>.</span>
                 </p>
-                <div className="flex items-center gap-2.5 bg-green-500/10 px-4 py-2 rounded-2xl border border-green-500/20">
+                <div className="flex items-center gap-3 bg-green-500/10 px-4 py-2 rounded-2xl border border-green-500/20">
                   <div className="w-6 h-6 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-600/20">
                     <LayoutGrid className="w-3.5 h-3.5" />
                   </div>
-                  <span className="text-xs font-black text-green-600 uppercase tracking-widest">My Store Verified</span>
+                  <div className="flex flex-col">
+                    <span className="text-[10px] font-black text-green-600 uppercase tracking-widest leading-none mb-1">My Store is</span>
+                    <span className="text-[11px] font-black text-green-600 uppercase tracking-tighter flex items-center gap-1">
+                      <ShieldCheck className="w-3.5 h-3.5" /> Verified & Secure
+                    </span>
+                  </div>
                 </div>
               </div>
               <button onClick={handleShare} className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-3 border transition-all ${darkMode ? 'border-zinc-800 hover:bg-zinc-800' : 'border-zinc-200 hover:bg-zinc-50'}`}>
