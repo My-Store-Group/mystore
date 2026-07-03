@@ -1,0 +1,14 @@
+{
+  "name": "mystore-root",
+  "version": "1.0.0",
+  "description": "Root for My Store Project",
+  "scripts": {
+    "install-all": "npm install && cd client && npm install && cd ../server && npm install",
+    "client": "cd client && npm run dev",
+    "server": "cd server && npm start",
+    "start": "npx concurrently \"npm run server\" \"npm run client\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
