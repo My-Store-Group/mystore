@@ -213,7 +213,6 @@ const Details = ({ apps, darkMode }) => {
                 onClick={async () => {
                   try {
                     // Mobile Redirect Fix: Fetch the file and download as blob
-                    alert("Starting download... Please check your notification bar.");
                     const response = await fetch(app.downloadUrl);
                     const blob = await response.blob();
                     const url = window.URL.createObjectURL(blob);
