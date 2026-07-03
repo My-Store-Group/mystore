@@ -230,8 +230,11 @@ const Details = ({ apps, darkMode }) => {
               >
                 <Download className="w-5 h-5" /> Download APK
               </button>
-              <p className="text-[10px] text-center font-bold opacity-40 px-2 leading-tight">
-                *Note: Chrome may show a "File might be harmful" warning. This is normal for all APKs outside Play Store. Our apps are verified & secure.
+              <p className="text-xs text-center font-black opacity-70 px-2 leading-tight">
+                *Note: Chrome may show a "File might be harmful" warning. This is normal for all APKs outside Play Store.
+                <span className="text-green-600 inline-flex items-center gap-1 ml-1">
+                  <CheckCircle className="w-3.5 h-3.5" /> Verified & Secure
+                </span>
               </p>
               <button onClick={handleShare} className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-3 border transition-all ${darkMode ? 'border-zinc-800 hover:bg-zinc-800' : 'border-zinc-200 hover:bg-zinc-50'}`}>
                 <Share2 className="w-5 h-5" /> Share
