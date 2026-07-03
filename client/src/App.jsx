@@ -230,25 +230,25 @@ const Details = ({ apps, darkMode }) => {
               >
                 <Download className="w-5 h-5" /> Download APK
               </button>
-              <div className="flex flex-col items-center gap-4 mt-6 px-2">
-                <p className="text-[13px] text-center font-black opacity-100 leading-relaxed flex flex-wrap items-center justify-center gap-x-1.5">
-                  <span className="inline-flex items-center gap-1 bg-zinc-500/10 px-2 py-1 rounded-lg text-[10px] uppercase tracking-wider"><Info className="w-3.5 h-3.5" /> Note</span>
+              <div className="flex flex-col items-center gap-3 mt-4 px-2">
+                <p className="text-[11px] text-center font-bold opacity-60 leading-relaxed flex flex-wrap items-center justify-center gap-x-1">
+                  <span className="inline-flex items-center gap-1 bg-zinc-500/10 px-1.5 py-0.5 rounded text-[9px] uppercase tracking-tighter"><Info className="w-3 h-3" /> Note</span>
                   <span>:</span>
-                  <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" className="w-4 h-4" alt="Chrome" />
-                  <span className="text-indigo-600">Chrome</span>
+                  <img src="https://www.google.com/chrome/static/images/chrome-logo.svg" className="w-3 h-3" alt="Chrome" />
+                  <span className="font-black">Chrome</span>
                   <span>may show a</span>
-                  <span className="inline-flex items-center gap-1 text-yellow-600 bg-yellow-500/10 px-1.5 py-0.5 rounded-lg border border-yellow-500/20"><AlertTriangle className="w-4 h-4" /> harmful warning</span>
+                  <span className="inline-flex items-center gap-0.5 text-yellow-600 bg-yellow-500/10 px-1 rounded"><AlertTriangle className="w-3.5 h-3.5" /> warning</span>
                   <span>. This is normal for all APKs outside</span>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" className="w-4 h-4" alt="Play Store" />
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/Google_Play_Arrow_logo.svg" className="w-3 h-3" alt="Play Store" />
                   <span className="font-black">Play Store</span>
                   <span>.</span>
                 </p>
-                <div className="flex flex-col items-center gap-2 bg-green-500/10 px-6 py-4 rounded-[2rem] border-2 border-green-500/20 w-full">
-                  <div className="w-10 h-10 bg-indigo-600 rounded-xl flex items-center justify-center text-white shadow-xl shadow-indigo-600/30">
-                    <LayoutGrid className="w-6 h-6" />
+                <div className="flex flex-col items-center gap-1.5 py-2">
+                  <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center text-white shadow-lg shadow-indigo-600/20">
+                    <LayoutGrid className="w-4 h-4" />
                   </div>
-                  <span className="text-base font-black text-green-600 uppercase tracking-tighter flex items-center gap-2">
-                    <ShieldCheck className="w-5 h-5" /> Verified & Secure
+                  <span className="text-[13px] font-black text-green-600 uppercase tracking-widest flex items-center gap-1.5">
+                    <ShieldCheck className="w-4 h-4" /> Verified & Secure
                   </span>
                 </div>
               </div>
