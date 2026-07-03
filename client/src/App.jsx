@@ -18,8 +18,12 @@ const App = () => {
 
   const GITHUB_URL = "https://raw.githubusercontent.com/My-Store-Group/My-Store/main/apps.json";
 
-  // Cloudflare/Vercel ke liye standard environment variable logic
-  const API_URL = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  // Cloudflare/Vercel ke liye logic (Fix: ensures /api is always present)
+  let baseApiUrl = import.meta.env.VITE_API_URL || "http://localhost:5000/api";
+  if (!baseApiUrl.endsWith('/api')) {
+    baseApiUrl = baseApiUrl.endsWith('/') ? `${baseApiUrl}api` : `${baseApiUrl}/api`;
+  }
+  const API_URL = baseApiUrl;
 
   useEffect(() => {
     fetchApps();
