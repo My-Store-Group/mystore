@@ -6,6 +6,7 @@
     "install-all": "npm install && cd client && npm install && cd ../server && npm install",
     "client": "cd client && npm run dev",
     "server": "cd server && npm start",
+    "dev": "npm start",
     "start": "npx concurrently \"npm run server\" \"npm run client\""
   },
   "devDependencies": {
